@@ -71,6 +71,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+          p.allergicTo = getAllergies(allergy);
           ret.resolve(p);
         });
       } else {
@@ -95,6 +96,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      substances: {value: ''}
     };
   }
 
@@ -136,6 +138,13 @@
     }
   }
 
+  function getAllergies(allergy) {
+    allergy.forEach(function(allergy){
+      var substance = allergy.resource.substance.text;
+      console.log(substance);
+    })
+  }
+
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
         typeof ob.valueQuantity != 'undefined' &&
@@ -160,6 +169,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#substances').html(p.allergicTo)
   };
 
 })(window);
