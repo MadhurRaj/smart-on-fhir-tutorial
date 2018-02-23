@@ -139,7 +139,8 @@
   }
 
   function getAllergies(allergy) {
-    allergy.forEach(function(allergy){
+    allergy.data.entry.forEach(function(allergy){
+      console.log(allergy);
       var substance = allergy.resource.substance.text;
       console.log(substance);
     })
