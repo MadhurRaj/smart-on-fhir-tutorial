@@ -22,15 +22,20 @@
                     }
                   });
 
-        $.when(pt, obv).fail(onError);
+        var allergy = smart.patient.api.search({type: "AllergyIntolerance"})
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, allergy).fail(onError);
+
+        $.when(pt, obv, allergy).done(function(patient, obv, allergy) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var dob = new Date(patient.birthDate);
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
+
+          var allergy = allergy;
+          console.log(allergy);
 
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
