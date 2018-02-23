@@ -139,11 +139,12 @@
   }
 
   function getAllergies(allergy) {
+    var allergies = [];
     allergy.data.entry.forEach(function(allergy){
-      console.log(allergy);
       var substance = allergy.resource.substance.text;
-      console.log(substance);
+      allergies.push(substance);
     })
+    return allergies.toString();
   }
 
   function getQuantityValueAndUnit(ob) {
