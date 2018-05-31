@@ -33,6 +33,7 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
+          var active = patient.active;
 
           var allergy = allergy;
           console.log(allergy);
@@ -59,6 +60,7 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
+          p.active = active;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -90,6 +92,7 @@
       lname: {value: ''},
       gender: {value: ''},
       birthdate: {value: ''},
+      active: {value: ''},
       age: {value: ''},
       height: {value: ''},
       systolicbp: {value: ''},
@@ -163,6 +166,7 @@
     $('#loading').hide();
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
+    $('#active').html(p.active);
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     $('#age').html(p.age);
