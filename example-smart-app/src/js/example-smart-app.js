@@ -36,9 +36,9 @@
           var active = patient.active;
           
           var address = patient.address;
-//           console.log(address);
+           console.log(address);
           var phone = patient.telecom;
-//           console.log(phone);
+           console.log(phone);
 
           var allergy = allergy;
           console.log(allergy);
