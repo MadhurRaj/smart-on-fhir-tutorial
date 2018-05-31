@@ -108,7 +108,7 @@
       hdl: {value: ''},
       substances: {value: ''},
       address: {value: ''},
-      phone: {value: ''}
+      phone: {value: ''},
     };
   }
 
