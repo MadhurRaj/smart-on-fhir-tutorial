@@ -34,6 +34,11 @@
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
           var active = patient.active;
+          
+          var address = patient.address;
+//           console.log(address);
+          var phone = patient.telecom;
+//           console.log(phone);
 
           var allergy = allergy;
           console.log(allergy);
@@ -61,6 +66,8 @@
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
           p.active = active;
+          p.address = address;
+          p.phone = phone;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -99,7 +106,9 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      substances: {value: ''}
+      substances: {value: ''},
+      address: {value: ''},
+      phone: {value: ''}
     };
   }
 
@@ -175,7 +184,9 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#substances').html(p.allergicTo)
+    $('#substances').html(p.allergicTo);
+    $('#address').html(p.address);
+    $('#phone').html(p.phone);
   };
 
 })(window);
