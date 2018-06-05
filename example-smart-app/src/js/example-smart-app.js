@@ -66,7 +66,7 @@
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
           p.active = active;
-          p.address = address;
+          p.address = address[0].use;
           p.phone = phone;
 
           if (typeof systolicbp != 'undefined')  {
